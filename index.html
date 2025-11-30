@@ -390,10 +390,8 @@
             const allData = JSON.parse(localStorage.getItem('myIdeaBoards') || '{}');
             const boardData = allData[index] || [];
             
-            if (boardData.length === 0 && index === 0) {
-                addNote('مرحباً! \n- تم إصلاح زر الحذف ✅.\n- جرب سحب الورقة من زر الأسهم بالأعلى ☝️.', 
-                    window.innerWidth/2 - 130, window.innerHeight/2 - 100);
-            } else {
+            // تم إزالة شرط الملاحظة الترحيبية
+            if (boardData.length > 0) {
                 boardData.forEach(n => createNoteElement(n));
             }
         }
